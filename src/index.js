@@ -1,3 +1,7 @@
 import withMessage from './withMessage';
 
-global.expect = withMessage(global.expect);
+export default () => {
+    global.expect = withMessage(global.expect);
+}
+
+export { withMessage };
