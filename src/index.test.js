@@ -1,4 +1,5 @@
 import './';
+import withMessage from "./withMessage";
 
 describe('jest-expect-message', () => {
   test('should fail with custom message', () => {
@@ -46,4 +47,9 @@ describe('jest-expect-message', () => {
       });
     });
   });
+
+  test('supports setting a custom prefix', () => {
+    const customExpect = withMessage(global.expect, "Different message goes here: \n");
+    expect(() => customExpect(false, 'This should be true').toBeTruthy()).toThrowErrorMatchingSnapshot();
+  })
 });

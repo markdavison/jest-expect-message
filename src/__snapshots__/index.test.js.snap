@@ -38,3 +38,12 @@ exports[`jest-expect-message supports custom matchers registered after jest-expe
 
 expected 101 not to be divisible by 1"
 `;
+
+exports[`jest-expect-message supports setting a custom prefix 1`] = `
+"Different message goes here: 
+This should be true
+
+<dim>expect(</intensity><red>received</color><dim>).</intensity>toBeTruthy<dim>()</intensity>
+
+Received: <red>false</color>"
+`;
